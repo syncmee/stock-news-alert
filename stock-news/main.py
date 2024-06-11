@@ -5,8 +5,8 @@ from pandas import *
 
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla"
-news_api = "e0eea1ef94ab4f54828e66b8a0eb8409"
-stock_api = "SOW4SM1RBIK60RL9"
+news_api = "$$$ Your News API Key $$$"
+stock_api = "$$$ Your Stock API Key $$$"
 news = {
     "q": COMPANY_NAME,
     "from": "2024-06-09",
@@ -25,7 +25,7 @@ news2 = f"Headline :{stock_news['articles'][1]['description']}"
 news3 = f"Headline :{stock_news['articles'][2]['description']}"
 
 stock_daily = requests.get(
-    url="https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&outputsize=compact&symbol=TSLA&datatype=csv&apikey=SOW4SM1RBIK60RL9")
+    url=f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&outputsize=compact&symbol=TSLA&datatype=csv&apikey={stock_api}")
 content = stock_daily.text
 # with open(file="stock_prices.csv", mode="") as stock_prices:
 #     stock_prices.write(content)
